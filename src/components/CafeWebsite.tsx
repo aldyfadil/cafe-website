@@ -215,7 +215,7 @@ const AboutSection = () => {
           <div className="grid grid-cols-2 gap-4">
             <motion.img 
               whileHover={{ scale: 1.05 }}
-              src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&q=80&w=400" 
+              src="https://cariproperti.com/_next/image?url=https%3A%2F%2Fd3lfgix2a8jnun.cloudfront.net%2Fblog-files%2F356%2FQuGc8lNHIdf2fJs7D6g4Ph8nEGJM12rAULydTjSw.jpg&w=3840&q=75" 
               alt="Cafe Interior" 
               className="rounded-3xl shadow-lg mt-12"
               referrerPolicy="no-referrer"
