@@ -29,7 +29,7 @@ const Navbar = () => {
           className="flex items-center gap-2"
         >
           <Coffee className="text-cafe-clay w-8 h-8" />
-          <span className="font-serif text-2xl font-bold tracking-tight">Aura & Bean</span>
+          <span className="font-serif text-2xl font-bold tracking-tight">Cafe Nongki</span>
         </motion.div>
 
         {/* Desktop Nav */}
@@ -235,7 +235,7 @@ const AboutSection = () => {
           <h2 className="text-5xl mb-8">Our Philosophy</h2>
           <div className="space-y-6 text-lg text-cafe-espresso/70 leading-relaxed">
             <p>
-              Founded on the belief that coffee is more than just a morning ritual, Aura & Bean was born from a passion for quality and community.
+              Founded on the belief that coffee is more than just a morning ritual, Cafe Nongki was born from a passion for quality and community.
             </p>
             <p>
               We partner directly with small-batch farmers to ensure every bean is ethically sourced and roasted to perfection. Our space is designed to be your second home—a sanctuary from the bustle of the city.
@@ -273,9 +273,9 @@ const Gallery = () => {
     <section id="gallery" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex justify-between items-end mb-12">
-          <h2 className="text-5xl">Moments at Aura</h2>
+          <h2 className="text-5xl">Moments at Nongki</h2>
           <a href="#" className="text-cafe-clay font-medium border-b border-cafe-clay pb-1 hover:text-cafe-espresso hover:border-cafe-espresso transition-all">
-            Follow @auraandbean
+            Follow @cafenongki
           </a>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -307,7 +307,7 @@ const Footer = () => {
           <div className="col-span-2">
             <div className="flex items-center gap-2 mb-6">
               <Coffee className="text-cafe-clay w-8 h-8" />
-              <span className="font-serif text-3xl font-bold tracking-tight">Aura & Bean</span>
+              <span className="font-serif text-3xl font-bold tracking-tight">Cafe Nongki</span>
             </div>
             <p className="text-cafe-cream/60 max-w-sm mb-8 leading-relaxed">
               Crafting exceptional coffee experiences and fostering community in the heart of the city. Join us for a cup of intention.
@@ -351,7 +351,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-cafe-cream/10 pt-8 text-center text-sm text-cafe-cream/40">
-          <p>&copy; 2024 Aura & Bean Cafe. All rights reserved.</p>
+          <p>&copy; 2024 Cafe Nongki. All rights reserved.</p>
         </div>
       </div>
     </footer>
