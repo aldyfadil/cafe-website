@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tumbler Coffee Roastery BSD - Kopi enak, cepat, dan terjangkau di BSD. Tempat ngopi murah BSD, coffee shop BSD.">
+    <meta name="keywords" content="kopi BSD, coffee shop BSD, kopi murah BSD, Tumbler Coffee Roastery">
+    <title>Tumbler Coffee Roastery BSD | Grab & Go Coffee</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        coffee: '#3B2F2F',
+                        cream: '#F5EBDD',
+                        dark: '#111111',
+                    },
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { font-family: 'Poppins', sans-serif; background-color: #F5EBDD; color: #111111; }
+        
+        /* Reveal Animation Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Sticky Navbar Glass Effect */
+        .nav-scrolled {
+            background: rgba(245, 235, 221, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Hero Background Overlay */
+        .hero-bg {
+            background: linear-gradient(rgba(17, 17, 17, 0.7), rgba(17, 17, 17, 0.7)), url('https://images.unsplash.com/photo-1559925393-8be0ec4767c8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+        }
+
+        /* WA Floating Button Animation */
+        .wa-float {
+            animation: pulse-wa 2s infinite;
+        }
+        @keyframes pulse-wa {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden">
+
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-coffee tracking-tighter">Tumbler<span class="text-dark">Coffee.</span></a>
+            
+            <div class="hidden md:flex space-x-8 items-center font-medium">
+                <a href="#about" class="text-dark hover:text-coffee transition">About</a>
+                <a href="#menu" class="text-dark hover:text-coffee transition">Menu</a>
+                <a href="#reviews" class="text-dark hover:text-coffee transition">Reviews</a>
+                <a href="#store" class="text-dark hover:text-coffee transition">Location</a>
+                <a href="#menu" class="bg-coffee text-cream px-5 py-2 rounded-full hover:bg-dark transition shadow-md">Order Now</a>
+            </div>
+
+            <div class="md:hidden flex items-center">
+                <button id="mobile-menu-btn" class="text-dark text-2xl focus:outline-none">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div id="mobile-menu" class="hidden md:hidden bg-cream border-t border-coffee/10 absolute w-full left-0 top-full">
+            <div class="flex flex-col px-4 pt-2 pb-6 space-y-3 shadow-lg">
+                <a href="#about" class="text-dark font-medium py-2">About</a>
+                <a href="#menu" class="text-dark font-medium py-2">Menu</a>
+                <a href="#reviews" class="text-dark font-medium py-2">Reviews</a>
+                <a href="#store" class="text-dark font-medium py-2">Location</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-bg h-screen flex items-center pt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left reveal">
+            <span class="text-cream bg-coffee/80 px-4 py-1 rounded-full text-sm font-semibold tracking-wider uppercase mb-4 inline-block">Grab & Go Coffee Shop</span>
+            <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-6 mt-4">
+                Kopi Enak, Cepat,<br>dan Terjangkau di BSD
+            </h1>
+            <p class="text-lg md:text-xl text-gray-200 mb-8 max-w-2xl">
+                Nikmati kopi berkualitas dengan harga ramah di kantong, cocok untuk daily coffee kamu. Solusi ngopi nikmat tanpa bikin dompet sekarat.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                <a href="#menu" class="bg-cream text-coffee px-8 py-4 rounded-full font-bold hover:bg-white transition shadow-lg text-center">Lihat Menu</a>
+                <a href="https://wa.me/6282128898897" target="_blank" class="bg-transparent border-2 border-cream text-cream px-8 py-4 rounded-full font-bold hover:bg-cream hover:text-coffee transition text-center">Pesan Sekarang</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center reveal">
+                <div class="rounded-2xl overflow-hidden shadow-2xl relative">
+                    <img src="https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Barista membuat kopi" class="w-full h-[400px] object-cover">
+                    <div class="absolute bottom-4 left-4 bg-white p-4 rounded-xl shadow-lg flex items-center gap-3">
+                        <div class="text-yellow-400 text-2xl"><i class="fas fa-star"></i></div>
+                        <div>
+                            <p class="font-bold text-dark leading-none">4.8 / 5.0</p>
+                            <p class="text-xs text-gray-500">Dari 1.300+ Review</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-dark mb-6">Bukan Sekadar Ngopi, Ini Teman Harianmu.</h2>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        Tumbler Coffee Roastery BSD hadir dengan konsep <strong>grab & go</strong>. Kami fokus memberikan kualitas kopi premium dengan harga yang sangat terjangkau, mulai dari <strong>Rp 15.000 - Rp 25.000</strong>.
+                    </p>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Sangat cocok untuk pekerja, mahasiswa, atau siapapun yang butuh <i>daily coffee boost</i> tanpa harus menunggu lama. Favorit pelanggan lokal BSD!
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3 text-dark font-medium"><i class="fas fa-check-circle text-coffee"></i> 100% Biji Kopi Pilihan</li>
+                        <li class="flex items-center gap-3 text-dark font-medium"><i class="fas fa-check-circle text-coffee"></i> Cepat, Praktis, & Anti-Ribet</li>
+                        <li class="flex items-center gap-3 text-dark font-medium"><i class="fas fa-check-circle text-coffee"></i> Harga Ramah Kantong</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="menu" class="py-20 bg-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Menu Favorit Kami</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Pilihan menu kopi, non-kopi, hingga gelato untuk melengkapi harimu.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white rounded-2xl p-4 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 relative group cursor-pointer border border-coffee/5">
+                    <span class="absolute top-6 right-6 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full z-10 shadow-md">🔥 Best Seller</span>
+                    <div class="h-48 bg-gray-200 rounded-xl mb-4 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1559525839-b184a4d698c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Kopi Susu Aren" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <h3 class="font-bold text-lg text-dark">Kopi Susu Gula Aren</h3>
+                    <p class="text-coffee font-semibold mt-2">Rp 18.000</p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-4 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 relative group cursor-pointer border border-coffee/5">
+                    <span class="absolute top-6 right-6 bg-yellow-400 text-dark text-xs font-bold px-3 py-1 rounded-full z-10 shadow-md">⭐ Favorite</span>
+                    <div class="h-48 bg-gray-200 rounded-xl mb-4 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1572442388796-11668aa44f0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Butterscotch Latte" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <h3 class="font-bold text-lg text-dark">Butterscotch Latte</h3>
+                    <p class="text-xs text-gray-500 mt-1">Non-Coffee</p>
+                    <p class="text-coffee font-semibold mt-2">Rp 22.000</p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-4 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 relative group cursor-pointer border border-coffee/5">
+                    <div class="h-48 bg-gray-200 rounded-xl mb-4 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1551030173-122aabc4489c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Americano" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <h3 class="font-bold text-lg text-dark">Ice Americano</h3>
+                    <p class="text-coffee font-semibold mt-2">Rp 15.000</p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-4 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 relative group cursor-pointer border border-coffee/5">
+                    <span class="absolute top-6 right-6 bg-coffee text-cream text-xs font-bold px-3 py-1 rounded-full z-10 shadow-md">Signature</span>
+                    <div class="h-48 bg-gray-200 rounded-xl mb-4 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1570197781417-0a5237721d2b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Gelato" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <h3 class="font-bold text-lg text-dark">Gelato Series</h3>
+                    <p class="text-xs text-gray-500 mt-1">Pistachio / Dark Choco / Honeycomb</p>
+                    <p class="text-coffee font-semibold mt-2">Mulai Rp 20.000</p>
+                </div>
+            </div>
+            
+            <div class="mt-10 text-center">
+                 <p class="text-gray-600 mb-4">*Tersedia juga varian Espresso, Americano & Aren Coffee Signature, Tea, dan aneka jajanan unik.</p>
+                 <a href="#store" class="inline-block border-2 border-coffee text-coffee px-6 py-2 rounded-full font-semibold hover:bg-coffee hover:text-cream transition">Lihat Menu Lengkap di Store</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-dark text-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Kenapa Memilih Tumbler Coffee?</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center p-6 border border-cream/10 rounded-2xl bg-white/5 hover:bg-white/10 transition">
+                    <div class="text-4xl text-coffee bg-cream w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4"><i class="fas fa-wallet"></i></div>
+                    <h3 class="font-bold text-xl mb-2">Harga Terjangkau</h3>
+                    <p class="text-gray-400 text-sm">Kopi enak ngga harus mahal. Pas buat dompet mahasiswa dan pekerja.</p>
+                </div>
+                <div class="text-center p-6 border border-cream/10 rounded-2xl bg-white/5 hover:bg-white/10 transition">
+                    <div class="text-4xl text-coffee bg-cream w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4"><i class="fas fa-mug-hot"></i></div>
+                    <h3 class="font-bold text-xl mb-2">Rasa Premium</h3>
+                    <p class="text-gray-400 text-sm">Biji kopi di-roast sendiri, menjamin kesegaran dan karakter rasa yang kuat.</p>
+                </div>
+                <div class="text-center p-6 border border-cream/10 rounded-2xl bg-white/5 hover:bg-white/10 transition">
+                    <div class="text-4xl text-coffee bg-cream w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4"><i class="fas fa-bolt"></i></div>
+                    <h3 class="font-bold text-xl mb-2">Cepat (Grab & Go)</h3>
+                    <p class="text-gray-400 text-sm">Pesan, bayar, ambil. Cocok buat kamu yang punya mobilitas tinggi.</p>
+                </div>
+                <div class="text-center p-6 border border-cream/10 rounded-2xl bg-white/5 hover:bg-white/10 transition">
+                    <div class="text-4xl text-coffee bg-cream w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4"><i class="fas fa-ice-cream"></i></div>
+                    <h3 class="font-bold text-xl mb-2">Banyak Pilihan</h3>
+                    <p class="text-gray-400 text-sm">Ngga cuma kopi! Ada Gelato dan aneka snack unik siap menemani harimu.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews" class="py-20 bg-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Apa Kata Mereka?</h2>
+                <div class="text-yellow-400 text-xl flex justify-center gap-1 mb-2">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                </div>
+                <p class="font-bold text-dark">4.8 / 5 Rating</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition relative">
+                    <i class="fas fa-quote-left text-4xl text-cream absolute top-4 left-4 opacity-50"></i>
+                    <p class="text-gray-600 mb-6 relative z-10 font-medium">"Kopi susu gula arennya juara! Enak banget, creamy dapet, kopinya tetep berasa, dan yang penting harganya affordable banget buat ngopi tiap hari."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-coffee text-cream rounded-full flex items-center justify-center font-bold">R</div>
+                        <div>
+                            <h4 class="font-bold text-dark text-sm">Rina S.</h4>
+                            <p class="text-xs text-gray-500">Pekerja Kantoran</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition relative">
+                    <i class="fas fa-quote-left text-4xl text-cream absolute top-4 left-4 opacity-50"></i>
+                    <p class="text-gray-600 mb-6 relative z-10 font-medium">"Andalan banget buat daily coffee sebelum kerja. Servicenya cepet (beneran grab & go), dan Ice Americanonya nyegerin banget!"</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-dark text-cream rounded-full flex items-center justify-center font-bold">A</div>
+                        <div>
+                            <h4 class="font-bold text-dark text-sm">Andi Pratama</h4>
+                            <p class="text-xs text-gray-500">Freelancer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition relative">
+                    <i class="fas fa-quote-left text-4xl text-cream absolute top-4 left-4 opacity-50"></i>
+                    <p class="text-gray-600 mb-6 relative z-10 font-medium">"Selain kopinya, wajib coba gelato pistachionya! Teksturnya pas, rasanya unik. Plus jajanan snacknya bikin betah buat ganjel perut."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-yellow-500 text-dark rounded-full flex items-center justify-center font-bold">D</div>
+                        <div>
+                            <h4 class="font-bold text-dark text-sm">Dina M.</h4>
+                            <p class="text-xs text-gray-500">Mahasiswa</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="store" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold text-dark mb-6">Mampir ke Roastery Kami</h2>
+                    <ul class="space-y-6">
+                        <li class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-cream text-coffee rounded-xl flex items-center justify-center shrink-0 text-xl"><i class="fas fa-map-marker-alt"></i></div>
+                            <div>
+                                <h4 class="font-bold text-dark">Alamat Lengkap</h4>
+                                <p class="text-gray-600">ICE Business Park, BSD City, Tangerang, Banten. (Dekat gerbang utama)</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-cream text-coffee rounded-xl flex items-center justify-center shrink-0 text-xl"><i class="fas fa-clock"></i></div>
+                            <div>
+                                <h4 class="font-bold text-dark">Jam Operasional</h4>
+                                <p class="text-gray-600">Setiap Hari: 08.00 - 19.00 WIB</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-cream text-coffee rounded-xl flex items-center justify-center shrink-0 text-xl"><i class="fas fa-store"></i></div>
+                            <div>
+                                <h4 class="font-bold text-dark">Fasilitas</h4>
+                                <div class="flex gap-2 mt-2">
+                                    <span class="bg-gray-100 px-3 py-1 rounded-full text-xs font-semibold text-gray-600">Dine-in (Terbatas)</span>
+                                    <span class="bg-gray-100 px-3 py-1 rounded-full text-xs font-semibold text-gray-600">Drive-thru Pick Up</span>
+                                    <span class="bg-gray-100 px-3 py-1 rounded-full text-xs font-semibold text-gray-600">Delivery Tanpa Kontak</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="h-[400px] w-full rounded-2xl overflow-hidden shadow-lg border-4 border-cream">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.986877239103!2d106.6358826!3d-6.301323!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69fb49fbbaab01%3A0xc3cf9058b76ba32c!2sICE%20Business%20Park%20BSD!5e0!3m2!1sid!2sid!4v1691234567890!5m2!1sid!2sid" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-coffee text-center reveal">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl font-bold text-cream mb-6">Ngopi Yuk Hari Ini!</h2>
+            <p class="text-gray-300 mb-10 text-lg">Jangan biarkan harimu kurang fokus. Pesan kopimu sekarang atau mampir langsung ke store kami di BSD.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#store" class="bg-cream text-coffee px-8 py-4 rounded-full font-bold hover:bg-white transition shadow-lg">Kunjungi Sekarang</a>
+                <a href="https://wa.me/6282128898897" target="_blank" class="bg-green-500 text-white px-8 py-4 rounded-full font-bold hover:bg-green-600 transition shadow-lg flex items-center justify-center gap-2">
+                    <i class="fab fa-whatsapp text-xl"></i> Pesan Online
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-gray-400 py-12 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <h3 class="text-2xl font-bold text-cream mb-4 tracking-tighter">Tumbler<span class="text-coffee">Coffee.</span></h3>
+                <p class="text-sm">Premium grab & go coffee roastery based in BSD City. Serving you good coffee with affordable price.</p>
+            </div>
+            <div>
+                <h4 class="text-cream font-bold mb-4">Kontak Kami</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><i class="fab fa-whatsapp mr-2 text-green-400"></i> 0821-2889-8897</li>
+                    <li><i class="fas fa-globe mr-2"></i> tumbler.coffee</li>
+                    <li><i class="fas fa-envelope mr-2"></i> hello@tumbler.coffee</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-cream font-bold mb-4">Follow Us</h4>
+                <div class="flex space-x-4">
+                    <a href="#" class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-coffee hover:text-cream transition"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-coffee hover:text-cream transition"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-8 border-t border-white/10 text-center text-sm">
+            <p>&copy; 2024 Tumbler Coffee Roastery. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/6282128898897" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-2xl z-50 wa-float hover:bg-green-600 transition" aria-label="Chat WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // 1. Sticky Navbar & Background Color Change on Scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('nav-scrolled');
+                navbar.classList.remove('py-4');
+                navbar.classList.add('py-2');
+            } else {
+                navbar.classList.remove('nav-scrolled');
+                navbar.classList.remove('py-2');
+                navbar.classList.add('py-4');
+            }
+        });
+
+        // 2. Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when link is clicked
+        const mobileLinks = menu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // 3. Scroll Reveal Animation (Intersection Observer)
+        const revealElements = document.querySelectorAll('.reveal');
+
+        const revealOptions = {
+            threshold: 0.15,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    return;
+                } else {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target); // Animasi cuma diputar 1x
+                }
+            });
+        }, revealOptions);
+
+        revealElements.forEach(el => {
+            revealOnScroll.observe(el);
+        });
+    </script>
+</body>
+</html>
